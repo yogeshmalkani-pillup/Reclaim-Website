@@ -1,22 +1,24 @@
 import React, { useState } from 'react'
 import { Mulish } from "next/font/google";
 import { Sections } from '@/utils/Contants';
+import { useWindowSize } from '@/utils/Utils';
 const mulish = Mulish({ subsets: ['latin'] })
 
 export default function Navbar({activeSection, scrollToView}) {
 
-    const [deviceWidth,setDeviceWidth] = useState(1200)
     const [navExpand,setNavExpand] = useState(false)
+    const windowSize = useWindowSize()
 
-    React.useEffect(()=> {
-        window.addEventListener('resize', ()=> {
-            setDeviceWidth(window.innerWidth)
-        })
-     }, [])
+    // React.useEffect(()=> {
+    //     window.addEventListener('resize', ()=> {
+    //         setDeviceWidth(window.innerWidth)
+    //     })
+    //  }, [window])
+     
 
   return (
     <div className={`w-full flex flex-row justify-around px-20 py-10 max-sm:px-5  ${mulish.className}`}>
-        { deviceWidth >= 800 ?   
+        { windowSize.width >= 800 ?   
                 <div className='w-full flex flex-row'>
                     <div className='flex flex-row gap-20 w-[80%] items-center'>
                         <div className='flex flex-row items-center gap-2'>
