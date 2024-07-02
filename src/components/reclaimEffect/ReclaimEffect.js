@@ -10,7 +10,7 @@ export default function ReclaimEffect() {
         <div className='flex flex-row  flex-wrap gap-20 justify-center w-full'>
           {
             ReclaimEffects.map((effect)=>{
-              return <EffectCard heading={effect.heading} text={effect.text}/>
+              return <EffectCard key={effect.text} heading={effect.heading} text={effect.text}/>
             })
           }
 
