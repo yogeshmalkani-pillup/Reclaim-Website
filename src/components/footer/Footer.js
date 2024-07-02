@@ -13,7 +13,7 @@ export default function Footer() {
                 />
                 <p className='text-[36px] max-sm:text-[18px] font-bold font-satoshi_bold'>ReClaim</p>
             </div>
-            <p className='text-[18px] max-sm:text-[12px] w-[60%] max-md:w-full'>Make the most out of every day with the world's greatest Screen Time software.</p>
+            <p className='text-[18px] max-sm:text-[12px] w-[60%] max-md:w-full'>Make the most out of every day with the worlds greatest Screen Time software.</p>
         </div>
 
         <div className='flex flex-col gap-10 '>
@@ -26,7 +26,7 @@ export default function Footer() {
             </div>
         </div>
 
-        <div className='flex flex-col gap-10 '>
+        <div className='flex flex-col gap-10'>
             <p className='text-[24px] font-bold max-sm:h-[18px]'>Follow us</p>
             <div className='flex flex-row gap-10'>
                 <img className='w-[36px] h-[36px] max-sm:w-[20px] max-sm:h-[20px]' src='icons/facebook.svg'/>
@@ -34,8 +34,6 @@ export default function Footer() {
                 <img className='w-[36px] h-[36px] max-sm:w-[20px] max-sm:h-[20px]' src='icons/linkedin.svg'/>
             </div>
         </div>
-
-
     </div>
   )
 }
