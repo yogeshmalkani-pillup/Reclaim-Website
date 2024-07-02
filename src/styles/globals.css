@@ -31,3 +31,20 @@ body {
     text-wrap: balance;
   }
 }
+
+@font-face {
+  font-family: "Satoshi_Regular";
+  src: url("/fonts/Satoshi-Regular.otf");
+}
+@font-face {
+  font-family: "Satoshi_Bold";
+  src: url("/fonts/Satoshi-Bold.otf");
+}
+@font-face {
+  font-family: "Satoshi_Medium";
+  src: url("/fonts/Satoshi-Medium.otf");
+}
+@font-face {
+  font-family: "Satoshi_Light";
+  src: url("/fonts/Satoshi-Light.otf");
+}
