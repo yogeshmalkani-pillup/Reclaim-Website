@@ -25,7 +25,7 @@ export default function TestimonialCarousel() {
     return (
       <div className='w-[80%] flex flex-col gap-[100px]'>
         {Reviews.map((item,idx)=>{
-          return <TestimonialItem isVisible={activeItem == (idx + 1) ? true : false } name={item.name} review={item.review} profession={item.profession} image={item.image} />
+          return <TestimonialItem key={item.name} isVisible={activeItem == (idx + 1) ? true : false } name={item.name} review={item.review} profession={item.profession} image={item.image} />
         })}
         <div className='flex flex-row gap-5'>
           <button onClick={() => handleCarousel("prev")}><img src='icons/left-arrow.svg'/></button>

@@ -1,7 +1,6 @@
 const Sections = [
     "Home",
     "Features",
-    "About Us",
 ]
 
 const ReclaimEffects = [
