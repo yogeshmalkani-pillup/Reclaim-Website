@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Mulish } from "next/font/google";
-import { Sections } from '@/pages/Contants';
+import { Sections } from '@/utils/Contants';
 const mulish = Mulish({ subsets: ['latin'] })
 
 export default function Navbar({activeSection, scrollToView}) {

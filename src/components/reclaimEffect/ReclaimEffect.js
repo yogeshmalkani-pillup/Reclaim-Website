@@ -1,6 +1,6 @@
 import React from 'react'
 import EffectCard from './EffectCard'
-import { ReclaimEffects } from '@/pages/Contants'
+import { ReclaimEffects } from '@/utils/Contants'
 
 
 export default function ReclaimEffect() {

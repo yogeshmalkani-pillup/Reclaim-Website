@@ -1,6 +1,6 @@
 import React from 'react'
-import { Reviews } from './Constants'
 import TestimonialItem from './TestimonialItem'
+import { Reviews } from './Constants'
 
 export default function TestimonialCarousel() {
     const [activeItem,setActiveItem] = React.useState('1')

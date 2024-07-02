@@ -1,6 +1,6 @@
-import { Influencers } from '@/pages/Contants'
 import React from 'react'
 import InfluencerCard from './InfluencerCard'
+import { Influencers } from '@/utils/Contants'
 
 export default function ConcernedPeople() {
   return (
