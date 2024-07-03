@@ -12,72 +12,71 @@ import HowItWorksSlider from "@/components/app-features/FetauresSlider";
 
 export default function Home() {
 
-  const [activeSection, setActiveSection] = React.useState("Home")
-  const featuresRef = React.useRef(null);
-  const homeRef = React.useRef(null)
+    const [activeSection, setActiveSection] = React.useState("Home")
+    const featuresRef = React.useRef(null);
+    const homeRef = React.useRef(null)
 
 
-  const scrollToElement = (sec) => {
-    if(sec == FEATURES){
-      setActiveSection(FEATURES)
-      if(featuresRef.current) {
-        featuresRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
-    }else if(sec == Home){
-      setActiveSection(HOME)
-      if(homeRef.current) {
-        homeRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
+    const scrollToElement = (sec) => {
+        if (sec == FEATURES) {
+            setActiveSection(FEATURES)
+            if (featuresRef.current) {
+                featuresRef.current.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else if (sec == Home) {
+            setActiveSection(HOME)
+            if (homeRef.current) {
+                homeRef.current.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+    };
+    const checkIfVisibleInWindow = (elementRef) => {
+        const rect = elementRef.current.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
     }
-    
-  };
-  const checkIfVisibleInWindow = (elementRef) => {
-    const rect = elementRef.current.getBoundingClientRect();
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            if (homeRef.current) {
+                if (checkIfVisibleInWindow(homeRef)) {
+                    setActiveSection(HOME);
+                }
+            } else if (featuresRef.current) {
+                if (checkIfVisibleInWindow(featuresRef)) {
+                    setActiveSection(FEATURES);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        <main
+            className={`flex min-h-screen flex-col items-center justify-between bg-[#040415] `}
+        >
+            <Navbar scrollToView={scrollToElement} activeSection={activeSection} />
+            <div ref={homeRef}>
+                <HomePage />
+            </div>
+            <div ref={featuresRef}>
+                <RecalimFeatures />
+            </div>
+            <ReclaimEffect />
+            <Testimonials />
+            <UsedByLeaders />
+            <FooterSection />
+        </main>
     );
-  }
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      if (homeRef.current) {
-        if (checkIfVisibleInWindow(homeRef)){
-          setActiveSection(HOME);
-        }
-      }else if (featuresRef.current) {
-        if (checkIfVisibleInWindow(featuresRef)){
-          setActiveSection(FEATURES);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between bg-[#040415] `}
-    >
-      <Navbar scrollToView={scrollToElement} activeSection={activeSection} />
-      <div ref={homeRef}>
-        <HomePage/>
-      </div>
-      <div ref={featuresRef}>
-        <RecalimFeatures />
-      </div>
-      <HowItWorksSlider />
-      <ReclaimEffect />
-      <Testimonials />
-      <UsedByLeaders />
-      <FooterSection />
-    </main>
-  );
 }

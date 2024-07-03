@@ -9,17 +9,17 @@ const Sections = [
 
 const ReclaimEffects = [
 
-    {heading: "40%", text: "Reduced distraction"}, 
-    {heading: "70%", text: "Present in relationship"}, 
-    {heading: "1h 15mins", text: "Avg time saved/day"}, 
+    { heading: "40%", text: "Reduced distraction" },
+    { heading: "70%", text: "Present in relationship" },
+    { heading: "1h 15mins", text: "Avg time saved/day" },
 
 ]
 
 
 const Influencers = [
-    {image: "tim.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”"},
-    {image: "huberman.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”"},
-    {image: "elon.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”"}
+    { image: "Tim.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”" },
+    { image: "huberman.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”" },
+    { image: "elon.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”" }
 ]
 
 const Leaders = [
@@ -31,7 +31,7 @@ const Leaders = [
 ]
 
 const Reviews = [
-    {image: "testimonial/profile.png", name: "Samantha Sench", review: "“ Hi, it’s Samantha. After using it made me a lot of benefits, starting with improving my focus and reducing ADHD. The app gives a seamless experience, highly recommend!", profession : "Student at Delhi University"}
-    ]
+    { image: "testimonial/profile.png", name: "Samantha Sench", review: "“ Hi, it’s Samantha. After using it made me a lot of benefits, starting with improving my focus and reducing ADHD. The app gives a seamless experience, highly recommend!", profession: "Student at Delhi University" }
+]
 
-export { Influencers, Sections, ReclaimEffects, Leaders, Reviews, HOME, FEATURES}
+export { Influencers, Sections, ReclaimEffects, Leaders, Reviews, HOME, FEATURES }
