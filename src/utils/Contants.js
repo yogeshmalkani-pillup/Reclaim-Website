@@ -1,6 +1,10 @@
+const HOME = "Home"
+const FEATURES = "Features"
+
+
 const Sections = [
-    "Home",
-    "Features",
+    HOME,
+    FEATURES,
 ]
 
 const ReclaimEffects = [
@@ -18,4 +22,16 @@ const Influencers = [
     {image: "elon.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”"}
 ]
 
-export { Influencers, Sections, ReclaimEffects}
+const Leaders = [
+    "hubspot.png",
+    "atlassian.png",
+    "jira.png",
+    "remote.png",
+    "netflix.png"
+]
+
+const Reviews = [
+    {image: "testimonial/profile.png", name: "Samantha Sench", review: "“ Hi, it’s Samantha. After using it made me a lot of benefits, starting with improving my focus and reducing ADHD. The app gives a seamless experience, highly recommend!", profession : "Student at Delhi University"}
+    ]
+
+export { Influencers, Sections, ReclaimEffects, Leaders, Reviews, HOME, FEATURES}

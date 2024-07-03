@@ -5,6 +5,9 @@ import ReclaimEffect from "@/components/reclaimEffect/ReclaimEffect";
 import Testimonials from "@/components/testimonials/Testimonials";
 import FooterSection from "./FooterSection";
 import RecalimFeatures from "@/components/app-features/RecalimFeatures";
+import UsedByLeaders from "@/components/used-by-leaders/UsedByLeaders";
+import { FEATURES, HOME } from "@/utils/Contants";
+import HowItWorksSlider from "@/components/app-features/FetauresSlider";
 
 
 export default function Home() {
@@ -15,19 +18,49 @@ export default function Home() {
 
 
   const scrollToElement = (sec) => {
-    if(sec == "Features"){
-      setActiveSection("Features")
+    if(sec == FEATURES){
+      setActiveSection(FEATURES)
       if(featuresRef.current) {
         featuresRef.current.scrollIntoView({ behavior: 'smooth' });
       }
-    }else if(sec == "Home"){
-      setActiveSection("Home")
+    }else if(sec == Home){
+      setActiveSection(HOME)
       if(homeRef.current) {
         homeRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     }
     
   };
+  const checkIfVisibleInWindow = (elementRef) => {
+    const rect = elementRef.current.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (homeRef.current) {
+        if (checkIfVisibleInWindow(homeRef)){
+          setActiveSection(HOME);
+        }
+      }else if (featuresRef.current) {
+        if (checkIfVisibleInWindow(featuresRef)){
+          setActiveSection(FEATURES);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <main
@@ -40,8 +73,10 @@ export default function Home() {
       <div ref={featuresRef}>
         <RecalimFeatures />
       </div>
+      <HowItWorksSlider />
       <ReclaimEffect />
       <Testimonials />
+      <UsedByLeaders />
       <FooterSection />
     </main>
   );

@@ -1,4 +1,7 @@
 import React from "react";
+
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 function useWindowSize() {
    
     const [windowSize, setWindowSize] = React.useState({
@@ -22,4 +25,8 @@ function useWindowSize() {
     return windowSize;
   }
 
-  export {useWindowSize}
+   
+  function cn(...inputs) {
+    return twMerge(clsx(inputs));
+  }
+  export {useWindowSize, cn}
