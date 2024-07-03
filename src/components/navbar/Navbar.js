@@ -70,9 +70,12 @@ export default function Navbar({ activeSection, scrollToView }) {
                                 )
                             })
                         }
-                        <div className=' flex flex-row justify-end'>
-                            <p className='rounded-3xl px-6 py-2 border-2 border-white w-fit text-[18px]'>Try it free</p>
-                        </div>
+                        <MovingBorderButton
+                            containerClassName="w-fit rounded-[50px] p-[1.5px]"
+                            className="w-full flex flex-row justify-end bg-black rounded-[50px] px-6 py-2 text-white"
+                        >
+                            <p className=' font-satoshi_bold text-[18px] w-full'>Try it free</p>
+                        </MovingBorderButton>
                     </div>}
                 </div>
             }
