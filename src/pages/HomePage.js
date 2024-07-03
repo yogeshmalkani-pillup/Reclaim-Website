@@ -36,7 +36,7 @@ export default function HomePage() {
             </div>
             <div className='px-20 max-sm:px-5 w-full flex flex-row justify-center'>
                 <video key={activeVideo} className='w-[80%]  max-md:w-full  rounded-[120px] bg-white' muted autoPlay id="homeVideo"  >
-                    <source src={`/videos/video${activeVideo}.mp4`} type="video/mp4" />
+                    <source src={`/videos/Video${activeVideo}.mp4`} type="video/mp4" />
                 </video>
             </div>
             <h1 className='text-[4.5vw] max-lg:px-10 max-lg:leading-[42px] max-md:text-[40px] px-20 max-sm:px-5 w-[80%] max-md:w-full leading-[4.5vw] text-center font-satoshi_bold tracking-[-2px] pb-20'>
