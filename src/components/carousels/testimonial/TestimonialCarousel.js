@@ -23,7 +23,7 @@ export default function TestimonialCarousel() {
 
 
     return (
-      <div className='w-[80%] flex flex-col gap-[100px]'>
+      <div className='w-[80%] max-md:w-full max-md:px-10 flex flex-col gap-[100px]'>
         {Reviews.map((item,idx)=>{
           return <TestimonialItem key={item.name} isVisible={activeItem == (idx + 1) ? true : false } name={item.name} review={item.review} profession={item.profession} image={item.image} />
         })}

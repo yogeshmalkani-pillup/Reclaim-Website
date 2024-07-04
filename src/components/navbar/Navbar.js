@@ -19,7 +19,7 @@ export default function Navbar({ activeSection, scrollToView }) {
 
 
     return (
-        <div className={`w-full flex flex-row fixed  justify-around px-20 mt-5  max-sm:px-5   ${mulish.className} `}>
+        <div className={`w-full flex flex-row fixed z-50  justify-around px-20 mt-5  max-sm:px-5   ${mulish.className} `}>
             {windowSize.width >= 800 ?
                 <div className={`w-[70%] rounded-[120px] py-3 px-5 flex flex-row ${styles.glassEffect}`}>
                     <div className='flex flex-row gap-20 w-[80%] items-center'>
@@ -49,7 +49,7 @@ export default function Navbar({ activeSection, scrollToView }) {
 
                 </div>
                 :
-                <div className={`w-[90%] ${navExpand ? 'rounded-2xl' : 'rounded-[100px]'} ${styles.glassEffect} p-5 flex flex-col justify-between`}>
+                <div className={`w-[90%] ${navExpand ? 'rounded-2xl' : 'rounded-[100px]'} ${styles.glassEffect} p-3 flex flex-col justify-between`}>
                     <div className='flex flex-row justify-between gap-20 w-full items-center'>
                         <div className='flex flex-row items-center gap-2'>
                             <img className=' w-[40px] h-[40px]'
@@ -66,7 +66,7 @@ export default function Navbar({ activeSection, scrollToView }) {
                         {
                             Sections.map((sec) => {
                                 return (
-                                    <p onClick={() => { scrollToView(sec) }} key={sec} className={`${activeSection == sec ? ' font-bold' : 'font-thin'} text-[18px] cursor-pointer`}>{sec}</p>
+                                    <button onClick={() => { scrollToView(sec) }} key={sec} className={`${activeSection == sec ? ' font-bold' : 'font-thin'} text-[18px] cursor-pointer`}>{sec}</button>
                                 )
                             })
                         }

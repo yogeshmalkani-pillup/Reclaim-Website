@@ -8,6 +8,7 @@ import RecalimFeatures from "@/components/app-features/RecalimFeatures";
 import UsedByLeaders from "@/components/used-by-leaders/UsedByLeaders";
 import { FEATURES, HOME } from "@/utils/Contants";
 import HowItWorksSlider from "@/components/app-features/FetauresSlider";
+import ScrollProgress from "@/components/app-features/testing";
 
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
             if (featuresRef.current) {
                 featuresRef.current.scrollIntoView({ behavior: 'smooth' });
             }
-        } else if (sec == Home) {
+        } else if (sec == HOME) {
             setActiveSection(HOME)
             if (homeRef.current) {
                 homeRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -60,6 +61,7 @@ export default function Home() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+
     }, []);
 
     return (
@@ -73,6 +75,7 @@ export default function Home() {
             <div ref={featuresRef}>
                 <RecalimFeatures />
             </div>
+            {/* <ScrollProgress /> */}
             <ReclaimEffect />
             <Testimonials />
             <UsedByLeaders />

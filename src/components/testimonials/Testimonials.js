@@ -7,7 +7,7 @@ export default function Testimonials() {
         <div className='bg-white bg-opacity-[8%] w-[50%] max-md:w-[90%] rounded-tr-[50px] rounded-br-[50px]'>
             <img src='/images/testimonial/testimonial_people.png' className='w-full p-20 max-sm:p-10' />
         </div>
-        <div className='w-[50%] max-md:w-[90%] flex flex-row justify-center'>
+        <div className='w-[50%] max-md:w-full flex flex-row justify-center'>
             <TestimonialCarousel />
         </div>
     </div>
