@@ -21,7 +21,7 @@ export default function Navbar({ activeSection, scrollToView }) {
     return (
         <div className={`w-full flex flex-row fixed z-50  justify-around px-20 mt-5  max-sm:px-5   ${mulish.className} `}>
             {windowSize.width >= 800 ?
-                <div className={`w-[70%] rounded-[120px] py-3 px-5 flex flex-row ${styles.glassEffect}`}>
+                <div className={`w-[70%] rounded-[120px] py-3 px-5 flex flex-row justify-between ${styles.glassEffect}`}>
                     <div className='flex flex-row gap-20 w-[80%] items-center'>
                         <div className='flex flex-row items-center gap-2'>
                             <img className=' w-[40px] h-[40px]'

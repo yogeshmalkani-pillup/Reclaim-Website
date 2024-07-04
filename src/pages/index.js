@@ -4,11 +4,9 @@ import React from "react";
 import ReclaimEffect from "@/components/reclaimEffect/ReclaimEffect";
 import Testimonials from "@/components/testimonials/Testimonials";
 import FooterSection from "./FooterSection";
-import RecalimFeatures from "@/components/app-features/RecalimFeatures";
 import UsedByLeaders from "@/components/used-by-leaders/UsedByLeaders";
 import { FEATURES, HOME } from "@/utils/Contants";
-import HowItWorksSlider from "@/components/app-features/FetauresSlider";
-import ScrollProgress from "@/components/app-features/testing";
+import { FetauresSlider } from "@/components/app-features/FetauresSlider";
 
 
 export default function Home() {
@@ -73,7 +71,7 @@ export default function Home() {
                 <HomePage />
             </div>
             <div ref={featuresRef}>
-                <RecalimFeatures />
+                <FetauresSlider />
             </div>
             {/* <ScrollProgress /> */}
             <ReclaimEffect />

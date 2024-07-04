@@ -5,29 +5,26 @@
     top: 0;
 }
 
-.slideDownContainer>div {
-    animation: 5s slide-down;
+.feature  {
+    animation: 3s slide-down ease-in ;
     position: absolute;
 }
 
 @keyframes slide-down {
-    0% {
+    0%{
         opacity: 0;
-    }
-
-    25% {
+      }
+      25%{
         opacity: 0.25;
-    }
+      }
 
-    50% {
+      50%{
         opacity: 0.5;
-    }
-
-    75% {
+      }
+      75%{
         opacity: 0.75;
-    }
-
-    100% {
+      }
+      100%{
         opacity: 1;
-    }
+      }
 }
