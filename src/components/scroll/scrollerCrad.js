@@ -19,7 +19,6 @@ export const StickyScroll = ({
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     setScrollProgress(latest)
-    console.log(latest)
     const cardsBreakpoints = content.map((_, index) => index / cardLength);
     const closestBreakpointIndex = cardsBreakpoints.reduce(
       (acc, breakpoint, index) => {
@@ -102,23 +101,18 @@ export const StickyScroll = ({
     //     {content[activeCard].content ?? null}
     //   </div>
     // </motion.div>
-    <motion.div
-    //   animate={{
-    //     backgroundColor: backgroundColors[activeCard % backgroundColors.length],
-    //   }}
-      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
-      ref={ref}
-    >
-       { (scrollProgress <= 0.33) ? <div className="w-[100vw] bg-red-400 h-screen ">
+    <div className="h-[300vh]">
+       { (scrollYProgress <= 0  && scrollYProgress >= 0.33) ? <div className="w-[100vw] bg-red-400 h-screen ">
 
-        </div> : (scrollProgress >= 0.33  && scrollProgress <= 0.69) ?
+        </div> : (scrollYProgress <= 0.33  && scrollYProgress <= 0.69) ?
          <div className="w-[100vw] bg-yellow-400 h-screen ">
 
          </div> :  <div className="w-[100vw] bg-green-400 h-screen ">
 
             </div>      
-        }       
-    </motion.div>
+        }
+       
+    </div>
     
   );
 };

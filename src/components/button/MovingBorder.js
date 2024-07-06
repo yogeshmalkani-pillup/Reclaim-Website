@@ -22,18 +22,18 @@ export function MovingBorderButton({
     return (
         <Component
             className={cn(
-                "bg-transparent relative overflow-hidden ",
+                "relative overflow-hidden ",
                 containerClassName
             )}
             {...otherProps}
         >
             <div
-                className="absolute inset-0"
+                className="inset-0"
             >
                 <MovingBorder duration={duration} rx="30%" ry="30%">
                     <div
                         className={cn(
-                            "h-20 w-20 opacity-[0.8] bg-[radial-gradient(#3CE8B5_40%,transparent_60%)]",
+                            "h-20 w-20 opacity-[0.8] bg-[radial-gradient(#3CE8B5_40%,transparent_60%)] ",
                             borderClassName
                         )}
                     />
@@ -42,7 +42,7 @@ export function MovingBorderButton({
 
             <div
                 className={cn(
-                    "  backdrop-blur-xl text-white antialiased",
+                    "backdrop-blur-xl",
                     className
                 )}
 

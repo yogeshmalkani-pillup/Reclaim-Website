@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
-import { useMotionValue, useScroll, useSpring, motion, useMotionValueEvent } from "framer-motion";
+import { useScroll, useSpring, useMotionValueEvent } from "framer-motion";
 import styles from "./FeatureSider.module.css"
+import { Features } from "@/utils/Contants";
 import Feature from "./Feature";
 
 export function FetauresSlider() {
@@ -18,28 +19,7 @@ export function FetauresSlider() {
         setScrollProgress(latest)
     });
 
-    const Features = [
-        {
-            title: "App Blocking",
-            desription: "Block apps automatically after you reach a set limit for a duration you can customize. Measure your focus, block distractions, automate your days and so much more.",
-            image: "usage-graph.png"
-        },
-        {
-            title: "App Locking Sessions",
-            desription: "Block apps automatically after you reach a set limit for a duration you can customize. Measure your focus, block distractions, automate your days and so much more.",
-            image: "app-lock-session.png"
-        },
-        {
-            title: "Blocking Session",
-            desription: "Block apps automatically after you reach a set limit for a duration you can customize. Measure your focus, block distractions, automate your days and so much more.",
-            image: "block-session.png"
-        },
-        {
-            title: "Recurring sessions",
-            desription: "Block apps automatically after you reach a set limit for a duration you can customize. Measure your focus, block distractions, automate your days and so much more.",
-            image: "session.png"
-        }
-    ]
+    
 
 
     return (

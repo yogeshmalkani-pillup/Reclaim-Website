@@ -9,9 +9,9 @@ const Sections = [
 
 const ReclaimEffects = [
 
-    { heading: "40%", text: "Reduced distraction" },
-    { heading: "70%", text: "Present in relationship" },
-    { heading: "1h 15mins", text: "Avg time saved/day" },
+    { heading: "40%", value: "40", text: "Reduced distraction" },
+    { heading: "70%", value: "70", text: "Present in relationship" },
+    { heading: "1h 15mins", value: "75", text: "Avg time saved/day" },
 
 ]
 
@@ -35,4 +35,27 @@ const Reviews = [
     { image: "testimonial/profile.png", name: "Yogesh Malkani", review: "“ Hi, i am yogesh i loved teh journey of developing the app which helps people living better", profession: "Developer at Reclaim" }
 ]
 
-export { Influencers, Sections, ReclaimEffects, Leaders, Reviews, HOME, FEATURES }
+const Features = [
+    {
+        title: "Block Out The Noise",
+        desription: "Eliminate distractions and focus on what truly matters.",
+        image: "blocking-session.png"
+    },
+    {
+        title: "Design Your Day ",
+        desription: "Achieve more with a clear, intentional schedule.",
+        image: "sessions.png"
+    },
+    {
+        title: "Protect Your Priorities",
+        desription: "Keep your focus on what truly matters most.",
+        image: "app-lock-session.png"
+    },
+    {
+        title: "Breathe, Think and Reflect",
+        desription: "Pause and center yourself before diving into the digital world.",
+        image: "breathe-in-out.png"
+    }
+]
+
+export { Influencers, Sections, ReclaimEffects, Leaders, Reviews,Features, HOME, FEATURES }

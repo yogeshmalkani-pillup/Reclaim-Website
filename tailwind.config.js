@@ -15,6 +15,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'dimensions-bg-image' : "url('../public/images/footer/dimensions.png')",
+        'iphone-bg-image': "url('../public/images/features/iphon15.png')"
       },
       fontFamily: {
         satoshi_regular: ["Satoshi_Regular","sans-serif"],
