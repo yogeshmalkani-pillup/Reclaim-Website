@@ -3,7 +3,6 @@ import { Mulish } from "next/font/google";
 import { Sections } from '@/utils/Contants';
 import { useWindowSize } from '@/utils/Utils';
 import styles from "./Navbar.module.css"
-import { MovingBorderButton } from '../button/MovingBorder';
 const mulish = Mulish({ subsets: ['latin'] })
 
 export default function Navbar({ activeSection, scrollToView }) {
@@ -21,7 +20,7 @@ export default function Navbar({ activeSection, scrollToView }) {
     return (
         <div className={`w-full flex flex-row fixed z-50  justify-around px-20 mt-5  max-sm:px-5   ${mulish.className} `}>
             {windowSize.width >= 800 ?
-                <div className={`w-[70%] rounded-[120px] py-3 px-5 flex flex-row justify-between ${styles.glassEffect}`}>
+                <div className={`w-[70%] rounded-[120px] py-3 px-5 flex flex-row justify-between h-[8vh] ${styles.glassEffect}`}>
                     <div className='flex flex-row gap-20 w-[80%] items-center'>
                         <div className='flex flex-row items-center gap-2'>
                             <img className=' w-[40px] h-[40px]'
@@ -40,17 +39,23 @@ export default function Navbar({ activeSection, scrollToView }) {
                             }
                         </div>}
                     </div>
-                    <MovingBorderButton
+                    {/* <MovingBorderButton
                         containerClassName="w-fit rounded-[50px] p-[1.5px] "
                         className="w-full flex flex-row justify-end bg-black rounded-[50px] px-6 py-2 text-white"
                     >
                         <p className=' font-satoshi_bold text-[18px] w-full'>Try it free</p>
-                    </MovingBorderButton>
+                    </MovingBorderButton> */}
+                    <button className="w-fit relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#3CE8B5_0%,#0000_50%,#3CE8B5_100%)]" />
+                        <span className="font-satoshi_bold text-[18px] inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl backdrop-filter">
+                            Try it free
+                        </span>
+                     </button>
 
                 </div>
                 :
-                <div className={`w-[90%] ${navExpand ? 'rounded-2xl' : 'rounded-[100px]'} ${styles.glassEffect} p-3 flex flex-col justify-between`}>
-                    <div className='flex flex-row justify-between gap-20 w-full items-center'>
+                <div className={`w-[90%] ${navExpand ? 'rounded-2xl' : 'rounded-[100px]'} ${styles.glassEffect} px-3 py-3 flex flex-col justify-between items-center min-h-[8vh]`}>
+                    <div className='flex flex-row h-full justify-between ite gap-20 w-full items-center'>
                         <div className='flex flex-row items-center gap-2'>
                             <img className=' w-[40px] h-[40px]'
                                 src="/icons/reclaim-logo.svg"
@@ -62,7 +67,7 @@ export default function Navbar({ activeSection, scrollToView }) {
                             <img src="icons/menu-bar.svg" className='w-[40px] h-[40px]  max-sm:w-[30px] max-sm:h-[30px]' />
                         </button>
                     </div>
-                    {navExpand && <div className='flex flex-col justify-center items-center gap-5 w-full mt-10'>
+                    {navExpand && <div className='flex flex-col justify-center items-center gap-5 w-full mt-10 p-5'>
                         {
                             Sections.map((sec) => {
                                 return (
@@ -70,12 +75,13 @@ export default function Navbar({ activeSection, scrollToView }) {
                                 )
                             })
                         }
-                        <MovingBorderButton
-                            containerClassName="w-fit rounded-[50px] p-[1.5px]"
-                            className="w-full flex flex-row justify-end bg-black rounded-[50px] px-6 py-2 text-white"
-                        >
-                            <p className=' font-satoshi_bold text-[18px] w-full'>Try it free</p>
-                        </MovingBorderButton>
+                        <button className="w-fit relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#3CE8B5_0%,#0000_50%,#3CE8B5_100%)]" />
+                            <span className="font-satoshi_bold text-[18px] inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl backdrop-filter-r">
+                                Try it free
+                            </span>
+                        </button>
+
                     </div>}
                 </div>
             }

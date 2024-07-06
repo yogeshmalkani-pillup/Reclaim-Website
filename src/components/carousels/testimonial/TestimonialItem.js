@@ -10,7 +10,7 @@ export default function TestimonialItem({ image, name, profession, review, isVis
                     <p className='text-[1vw] max-md:text-[15px] max-sm:text-[10px] font-satoshi_regular'>{profession}</p>
                 </div>
             </div>
-            <p className='text-[1.5vw] max-md:text-[20px] max-sm:text-[15px] font-satoshi_light'>{review}</p>
+            <p className='text-[1.5vw] max-md:text-[20px] max-sm:text-[18px] h-[100px] font-satoshi_light'>{review.substr(0,200)}</p>
         </div>
     )
 }

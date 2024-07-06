@@ -6,8 +6,7 @@
 }
 
 .feature  {
-    animation: 3s slide-down ease-in ;
-    position: absolute;
+    animation: 3s slide-down ease-in;
 }
 
 @keyframes slide-down {

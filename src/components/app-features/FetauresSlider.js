@@ -23,9 +23,9 @@ export function FetauresSlider() {
 
 
     return (
-        <div ref={scrollDemoRef} className="h-[700vh] w-[90vw]" >
+        <div ref={scrollDemoRef} className="h-[500vh] w-[90vw]" >
             <div className={styles.slideDownContainer} >
-                <div className="absolute bottom-0 w-full h-[90%]">
+                <div className="absolute bottom-0 w-full h-[85vh]">
                     <Feature hidden={scrollProgress < 0.25 ? false : true} title={Features[0].title} description={Features[0].desription} image={Features[0].image} />
                     <Feature hidden={(scrollProgress >= 0.25 && scrollProgress < 0.5) ? false : true} title={Features[1].title} description={Features[1].desription} image={Features[1].image} />
                     <Feature hidden={(scrollProgress >= 0.5 && scrollProgress < 0.75) ? false : true} title={Features[2].title} description={Features[2].desription} image={Features[2].image} />

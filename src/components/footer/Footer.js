@@ -13,7 +13,7 @@ export default function Footer() {
                 />
                 <p className='text-[36px] max-sm:text-[18px] font-bold font-satoshi_bold'>ReClaim</p>
             </div>
-            <p className='text-[18px] max-sm:text-[12px] w-[60%] max-md:w-full'>Make the most out of every day with the worlds greatest Screen Time software.</p>
+            <p className='text-[18px] max-sm:text-[15px] w-[60%] max-md:w-full'>Make the most out of every day with the worlds greatest Screen Time software.</p>
         </div>
 
         <div className='flex flex-col gap-10 '>

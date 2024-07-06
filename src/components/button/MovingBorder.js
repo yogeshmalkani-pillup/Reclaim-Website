@@ -33,7 +33,7 @@ export function MovingBorderButton({
                 <MovingBorder duration={duration} rx="30%" ry="30%">
                     <div
                         className={cn(
-                            "h-20 w-20 opacity-[0.8] bg-[radial-gradient(#3CE8B5_40%,transparent_60%)] ",
+                            "h-20 w-20 opacity-[0.7] bg-[radial-gradient(#3CE8B5_40%,transparent_60%)]  ",
                             borderClassName
                         )}
                     />
@@ -42,7 +42,7 @@ export function MovingBorderButton({
 
             <div
                 className={cn(
-                    "backdrop-blur-xl",
+                    "backdrop-blur-xl backdrop-filter-r",
                     className
                 )}
 

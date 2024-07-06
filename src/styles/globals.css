@@ -53,6 +53,10 @@ body {
   animation: 3s fading ease-in;
 }
 
+.backdrop-filter-r {
+  -webkit-backdrop-filter: blur(64px);
+  backdrop-filter: blur(64px);
+}
 @keyframes fading {
   0% {
     opacity: 0;
