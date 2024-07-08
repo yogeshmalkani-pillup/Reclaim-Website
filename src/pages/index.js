@@ -3,17 +3,18 @@ import HomePage from "./HomePage";
 import React from "react";
 import ReclaimEffect from "@/components/reclaimEffect/ReclaimEffect";
 import Testimonials from "@/components/testimonials/Testimonials";
-import FooterSection from "./FooterSection";
 import UsedByLeaders from "@/components/used-by-leaders/UsedByLeaders";
-import { FEATURES, HOME } from "@/utils/Contants";
+import { FEATURES, HOME, TERMSANDCONDITION } from "@/utils/Contants";
 import { FetauresSlider } from "@/components/app-features/FetauresSlider";
 import Terms from "./Terms";
+import Footer from "@/components/footer/Footer";
+import BottomSection from "@/components/footer/BottomSection";
+import { IsSectionVisible } from "@/utils/Utils";
 
 
 export default function Home() {
 
     const [activeSection, setActiveSection] = React.useState(HOME)
-    const [ activePage, setActivePage] = React.useState("Terms")
     const featuresRef = React.useRef(null);
     const homeRef = React.useRef(null)
 
@@ -32,59 +33,38 @@ export default function Home() {
         }
 
     };
-    const checkIfVisibleInWindow = (elementRef) => {
-        const rect = elementRef.current.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
+    const isFeatureVisible = IsSectionVisible(featuresRef)
 
     React.useEffect(() => {
-        const handleScroll = () => {
-            if (homeRef.current) {
-                if (checkIfVisibleInWindow(homeRef)) {
-                    setActiveSection(HOME);
-                }
-            } else if (featuresRef.current) {
-                if (checkIfVisibleInWindow(featuresRef)) {
-                    setActiveSection(FEATURES);
-                }
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        handleScroll();
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-
-    }, []);
+        if (isFeatureVisible) {
+            setActiveSection(FEATURES)
+        } else {
+            setActiveSection(HOME)
+        }
+    }, [isFeatureVisible])
 
     return (
         <main
             className={`flex min-h-screen flex-col items-center justify-between bg-[#040415] `}
         >
-            <Navbar scrollToView={scrollToElement} activeSection={activeSection} />
-           { activePage == "Home" && <div className="w-full h-full">
-                <div ref={homeRef}>
-                    <HomePage />
+            <Navbar setActivePage={setActiveSection} scrollToView={scrollToElement} activeSection={activeSection} />
+            {
+                activeSection == TERMSANDCONDITION ? <Terms /> : <div className="w-full h-full">
+                    <div ref={homeRef}>
+                        <HomePage />
+                    </div>
+                    <div ref={featuresRef}>
+                        <FetauresSlider setActiveSection={setActiveSection} />
+                    </div>
+                    <ReclaimEffect />
+                    <Testimonials />
+                    <UsedByLeaders />
+                    <BottomSection />
                 </div>
-                <div ref={featuresRef}>
-                    <FetauresSlider />
-                </div>
-                {/* <ScrollProgress /> */}
-                <ReclaimEffect />
-                <Testimonials />
-                <UsedByLeaders />
-                <FooterSection />
-           </div>}
-           {
-            activePage == "Terms" && <Terms />
-           }
+
+            }
+
+            <Footer setActivePage={setActiveSection} />
         </main>
     );
 }

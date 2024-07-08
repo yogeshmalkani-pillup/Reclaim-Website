@@ -11,7 +11,6 @@ export function FetauresSlider() {
         target: scrollDemoRef,
         offset: ["start start", "end start"]
     })
-    const scale = useSpring(scrollYProgress);
     const [scrollProgress, setScrollProgress] = useState(0) // Passing scrollYProgress
 
 
@@ -19,11 +18,11 @@ export function FetauresSlider() {
         setScrollProgress(latest)
     });
 
-    
+
 
 
     return (
-        <div ref={scrollDemoRef} className="h-[500vh] w-[90vw]" >
+        <div ref={scrollDemoRef} className="h-[500vh] w-full" >
             <div className={styles.slideDownContainer} >
                 <div className="absolute top-[15vh] w-full h-[80vh]">
                     <Feature hidden={scrollProgress < 0.25 ? false : true} title={Features[0].title} description={Features[0].desription} image={Features[0].image} />
