@@ -18,8 +18,8 @@ const ReclaimEffects = [
 
 
 const Influencers = [
-    { image: "Tim.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”" },
-    { image: "Tim.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”" },
+    { image: "tim.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”" },
+    { image: "tim.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”" },
     { image: "huberman.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”" },
     { image: "elon.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”" }
 ]
