@@ -2,13 +2,14 @@ import { MovingBorderButton } from "@/components/button/MovingBorder";
 import ShimmerBorder from "@/components/button/ShimmerBorder";
 import ConcernedPeople from "@/components/home/ConcernedPeople";
 import PhoneEvolution from "@/components/home/PhoneEvolution";
+import { IsSectionVisible } from "@/utils/Utils";
 import React from "react";
 
 
 
 export default function HomePage() {
 
-
+    const homeVideoRef = React.useRef(null)
     const [activeVideo, setActiveVideo] = React.useState(1)
     const handleActiveVideo = () => {
         if (activeVideo < 4) {
@@ -18,23 +19,29 @@ export default function HomePage() {
         }
 
     }
+    const isVideoVisible = IsSectionVisible(homeVideoRef)
 
     React.useEffect(() => {
         document.getElementById('homeVideo').addEventListener('ended', handleActiveVideo, true);
-    }, [])
+    }, [activeVideo])
+
+    React.useEffect(()=>{
+        console.log("visible")
+        document.getElementById('homeVideo').play()
+    },[isVideoVisible])
 
     return (
         <div className='bg-[#040415] flex flex-col gap-10 justify-start items-center w-full py-10 mt-20'>
             <div className='flex flex-row max-md:flex-col max-md:gap-20 w-full items-center justify-between px-[100px] max-sm:px-5'>
                 <div className='flex flex-col max-md:items-center gap-4 w-[65%] max-md:w-full'>
-                    <h1 className='text-[4.5vw] max-md:text-[42px] max-md:leading-[40px] w-[80%]  max-md:w-full max-md:text-center font-satoshi_bold leading-[4.5vw] tracking-[-0.1vw]'>{"Distraction has become our "}<span className=' text-[#3CE8B5]'>{"LifeStyle"}</span></h1>
+                    <h1 className='text-[4.5vw] max-md:text-[42px] max-md:leading-[40px] w-[80%]  max-md:w-full max-md:text-center font-satoshi_bold leading-[4.5vw] tracking-[-0.1vw]'><span className=' text-[#3CE8B5]'>{"Distraction"}</span> {" has become our "}<span className=' text-[#3CE8B5]'>{"LifeStyle"}</span></h1>
                     <h2 className='text-[1.2vw] max-md:text-[18px] w-[80%] max-md:w-full max-md:text-center font-satoshi_regular'>{"Big-Tech has hacked human psychology to make apps addictive"}</h2>
-                    <ShimmerBorder text="Now" containerClass="w-fit p-[1.5px]" textClass="px-10 py-4  max-sm:py-2 bg-white text-[30px] max-sm:text-[20px] font-satoshi_medium  text-[#040415]" />
+                    <ShimmerBorder text="Reclaim It" containerClass="w-fit p-[2px]" textClass="px-14 py-4  max-sm:py-2 bg-white text-[30px] max-sm:text-[20px] font-satoshi_medium  text-[#040415]" />
                 </div>
                 <img src='images/hand-holding-phone.png' className=' h-[45vw] max-sm:h-[300px]' />
             </div>
             <div className='px-20 max-sm:px-5 w-full flex flex-row justify-center'>
-                <video playsinline key={activeVideo} className='w-[80%]  max-md:w-full max-md:rounded-[60px]  rounded-[120px] bg-white' muted autoPlay id="homeVideo"  >
+                <video ref={homeVideoRef} playsinline key={activeVideo} className='w-[80%]  max-md:w-full max-md:rounded-[60px]  rounded-[70px] bg-white' muted id="homeVideo"  >
                     <source src={`/videos/screenTimeVideo${activeVideo}.mp4`} type="video/mp4" />
                 </video>
             </div>

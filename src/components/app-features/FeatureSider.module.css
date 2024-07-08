@@ -6,24 +6,27 @@
 }
 
 .feature  {
-    animation: 3s slide-down ease-in;
+    animation: 0.7s slide-down ease-out;
 }
 
 @keyframes slide-down {
     0%{
-        opacity: 0;
+        bottom: -100%;
+          opacity: 0%;
       }
-      25%{
-        opacity: 0.25;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /* 25%{
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  bottom: -75%;
       }
 
       50%{
-        opacity: 0.5;
+        bottom: -50%;
       }
       75%{
-        opacity: 0.75;
-      }
+        bottom: -25%;
+        }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
       100%{
-        opacity: 1;
+        bottom: 0%;
+          opacity: 100%;
       }
 }
