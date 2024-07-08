@@ -10,9 +10,9 @@ export default function Terms() {
     }, [])
     return (
         <div className={`w-full mt-20 px-20 max-md:px-10 max-sm:px-5 pb-20 ${mulish.className}`}>
-            <div class="relative w-full mt-10 ">
+            <div class="relative w-full mt-10">
                 <div class="absolute inset-0 bg-gradient-to-b from-[#3CE8B5] to-[#FFFFFF] opacity-5"></div>
-                <div class="relative">
+                <div class="relative p-4">
                     <h1 className='text-[4.5vw] font-bold text-[#3CE8B5] w-full text-center'>Terms of Use & Privacy Policy</h1>
                 </div>
             </div>
@@ -55,7 +55,7 @@ export default function Terms() {
                         <li>Violate any applicable laws.</li>
                         <li>Infringe on the rights of others.</li>
                         <li>Disrupt or interfere with the security or functionality of Reclaim.</li>
-                        <li>Attempt unauthorized access to our systems or other users' accounts.</li>
+                        <li>Attempt unauthorized access to our systems or other users accounts.</li>
                     </ul>
                 </section>
                 <br />
@@ -92,7 +92,7 @@ export default function Terms() {
 
                 <section>
                     <h2>11. Disclaimers</h2>
-                    <p>Reclaim is provided "as is" without warranties of any kind. We disclaim all warranties, whether express or implied, including but not limited to merchantability and fitness for a particular purpose.</p>
+                    <p>Reclaim is provided &quot;as is&quot; without warranties of any kind. We disclaim all warranties, whether express or implied, including but not limited to merchantability and fitness for a particular purpose.</p>
                 </section>
                 <br />
 
@@ -191,7 +191,7 @@ export default function Terms() {
 
 
                 <section>
-                    <h2>7. Children's Privacy</h2>
+                    <h2>7. Children &apos;s Privacy</h2>
                     <p>Reclaim does not knowingly collect personal data from children under 13. If you believe we have inadvertently collected such data, please contact us to delete it.</p>
                 </section>
                 <br />

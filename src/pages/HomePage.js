@@ -56,7 +56,7 @@ export default function HomePage() {
                 </div>
                 <img src='images/hand-holding-phone.png' className=' h-[45vw] max-sm:h-[300px]' />
             </div>
-            <div className='w-[70%] max-md:w-full max-md:rounded-[60px] rounded-[70px] overflow-hidden '>
+            <div className='w-[70%] max-md:w-[90%] max-md:rounded-[50px] rounded-[70px] overflow-hidden '>
                 <video ref={homeVideoRef} playsInline key={activeVideo} autoPlay muted id="homeVideo"  >
                     <source src={`/videos/screenTimeVideo${activeVideo}.mp4`} type="video/mp4" />
                 </video>
