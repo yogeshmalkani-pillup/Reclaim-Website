@@ -7,11 +7,13 @@ import FooterSection from "./FooterSection";
 import UsedByLeaders from "@/components/used-by-leaders/UsedByLeaders";
 import { FEATURES, HOME } from "@/utils/Contants";
 import { FetauresSlider } from "@/components/app-features/FetauresSlider";
+import Terms from "./Terms";
 
 
 export default function Home() {
 
-    const [activeSection, setActiveSection] = React.useState("Home")
+    const [activeSection, setActiveSection] = React.useState(HOME)
+    const [ activePage, setActivePage] = React.useState("Terms")
     const featuresRef = React.useRef(null);
     const homeRef = React.useRef(null)
 
@@ -67,17 +69,22 @@ export default function Home() {
             className={`flex min-h-screen flex-col items-center justify-between bg-[#040415] `}
         >
             <Navbar scrollToView={scrollToElement} activeSection={activeSection} />
-            <div ref={homeRef}>
-                <HomePage />
-            </div>
-            <div ref={featuresRef}>
-                <FetauresSlider />
-            </div>
-            {/* <ScrollProgress /> */}
-            <ReclaimEffect />
-            <Testimonials />
-            <UsedByLeaders />
-            <FooterSection />
+           { activePage == "Home" && <div className="w-full h-full">
+                <div ref={homeRef}>
+                    <HomePage />
+                </div>
+                <div ref={featuresRef}>
+                    <FetauresSlider />
+                </div>
+                {/* <ScrollProgress /> */}
+                <ReclaimEffect />
+                <Testimonials />
+                <UsedByLeaders />
+                <FooterSection />
+           </div>}
+           {
+            activePage == "Terms" && <Terms />
+           }
         </main>
     );
 }

@@ -25,10 +25,31 @@ export default function HomePage() {
         document.getElementById('homeVideo').addEventListener('ended', handleActiveVideo, true);
     }, [activeVideo])
 
-    React.useEffect(()=>{
-        console.log("visible")
-        document.getElementById('homeVideo').play()
-    },[isVideoVisible])
+    // React.useEffect(()=>{
+    //     console.log("visible")
+    //     document.getElementById('homeVideo').play()
+    // },[isVideoVisible])
+
+
+  const loadVideoCb = React.useCallback(() => {
+    if (homeVideoRef.current) {
+      const video = homeVideoRef.current;
+      video.controls = false; // or true
+      video.muted = true;
+      video.autoplay = true;
+
+      setTimeout(() => {
+        const promise = video?.play();
+        if (promise?.then) {
+          promise.then(() => {}).catch(() => {});
+        }
+      }, 0);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    loadVideoCb();
+  }, [loadVideoCb]);
 
     return (
         <div className='bg-[#040415] flex flex-col gap-10 justify-start items-center w-full py-10 mt-20'>
@@ -41,7 +62,7 @@ export default function HomePage() {
                 <img src='images/hand-holding-phone.png' className=' h-[45vw] max-sm:h-[300px]' />
             </div>
             <div className='px-20 max-sm:px-5 w-full flex flex-row justify-center'>
-                <video ref={homeVideoRef} playsinline key={activeVideo} className='w-[80%]  max-md:w-full max-md:rounded-[60px]  rounded-[70px] bg-white' muted id="homeVideo"  >
+                <video ref={homeVideoRef} playsInline   key={activeVideo} autoPlay  className=' max-md:w-full max-md:rounded-[60px]  rounded-[70px] bg-white' muted id="homeVideo"  >
                     <source src={`/videos/screenTimeVideo${activeVideo}.mp4`} type="video/mp4" />
                 </video>
             </div>
