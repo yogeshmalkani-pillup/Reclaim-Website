@@ -7,10 +7,10 @@ export default function FadeInWhenVisible({children, duration, className}) {
         className={className}
         initial="hidden"
         whileInView="visible"
-        transition={{ duration: duration }}
+        transition={{ duration: duration, type: "tween"  }}
         variants={{
-        visible: { opacity: 1, scale: 1 },
-        hidden: { opacity: 0, scale: 0 }
+            visible: { opacity: 1, scale: 1 },
+            hidden: { opacity: 0, scale: 0 }
         }}
   >
         {children}

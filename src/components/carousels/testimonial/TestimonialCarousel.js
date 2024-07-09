@@ -24,7 +24,7 @@ export default function TestimonialCarousel() {
 
     useInterval(() => {
         handleCarousel("next");
-      }, 3000);
+      }, 8000);
   
 
 

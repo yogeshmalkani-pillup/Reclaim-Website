@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import FadeInWhenVisible from '../animations/FadeInWhenVisible'
+import { useScroll } from 'framer-motion'
+import { motion } from 'framer-motion'
+
 
 
 export default function Feature({ hidden, title, description, image }) {
+    const ref = useRef(null)
+    const { scrollYProgress } = useScroll({
+    offset: ["start end", "end end"]
+    })
+
+
     return (
-        <div className={`flex flex-row max-md:flex-col gap-20 max-sm:gap-10 items-center justify-center w-full h-full relative ${hidden ? 'hidden' : ''} `}>
-            <FadeInWhenVisible duration={0.5} className="w-[50%] h-full max-md:h-[60vh]  flex flex-row justify-center">
+        <motion.div  style={{ y: scrollYProgress, x: -50 }} className={`flex flex-row max-md:flex-col gap-20 max-sm:gap-10 items-center justify-center w-full h-full relative ${hidden ? 'hidden' : ''} `}>
+            <FadeInWhenVisible duration={0.5} className="w-[50%] max-md:w-full h-full max-md:h-[60vh]  flex flex-row justify-center">
                 <img className='absolute top-0 h-full  max-md:h-[60vh] ' src="/images/features/iphone15.png" />
                 <img key={title} className={`absolute top-0 h-full  max-md:h-[60vh] `} src={`images/features/${image}`} />
             </FadeInWhenVisible>
@@ -15,6 +24,6 @@ export default function Feature({ hidden, title, description, image }) {
                     {description}
                 </p>
             </FadeInWhenVisible>
-        </div>
+        </motion.div>
     )
 }

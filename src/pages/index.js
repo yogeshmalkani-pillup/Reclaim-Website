@@ -48,23 +48,25 @@ export default function Home() {
             className={`flex min-h-screen flex-col items-center justify-between bg-[#040415] `}
         >
             <Navbar setActivePage={setActiveSection} scrollToView={scrollToElement} activeSection={activeSection} />
-            {
-                activeSection == TERMSANDCONDITION ? <Terms /> : <div className="w-full h-full">
-                    <div ref={homeRef}>
-                        <HomePage />
+            <div className="w-full mt-20">
+                {
+                    activeSection == TERMSANDCONDITION ? <Terms /> : <div className="w-full h-full">
+                        <div ref={homeRef}>
+                            <HomePage />
+                        </div>
+                        <div ref={featuresRef}>
+                            <FetauresSlider setActiveSection={setActiveSection} />
+                        </div>
+                        <ReclaimEffect />
+                        <Testimonials />
+                        <UsedByLeaders />
+                        <BottomSection />
                     </div>
-                    <div ref={featuresRef}>
-                        <FetauresSlider setActiveSection={setActiveSection} />
-                    </div>
-                    <ReclaimEffect />
-                    <Testimonials />
-                    <UsedByLeaders />
-                    <BottomSection />
-                </div>
 
-            }
-
-            <Footer setActivePage={setActiveSection} />
+                }
+                <Footer setActivePage={setActiveSection} />
+            </div>
+           
         </main>
     );
 }

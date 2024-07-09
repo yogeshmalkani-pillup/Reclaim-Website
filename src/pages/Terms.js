@@ -21,7 +21,7 @@ export default function Terms() {
                     <h1 className='text-[4.5vw] font-bold text-[#3CE8B5] w-full text-center'>Terms of Use & Privacy Policy</h1>
                 </div>
             </div>
-            <div className='p-5'>
+            <div className='p-5 mt-10'>
                 <h1>Reclaim - Terms of Use</h1>
                 <br />
                 <p><strong>Effective Date: [5th June, 2024]</strong></p>

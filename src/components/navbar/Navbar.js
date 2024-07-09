@@ -3,6 +3,7 @@ import { Mulish } from "next/font/google";
 import { HOME, Sections } from '@/utils/Contants';
 import { useWindowSize } from '@/utils/Utils';
 import styles from "./Navbar.module.css"
+import ShimmerBorder from '../button/ShimmerBorder';
 const mulish = Mulish({ subsets: ['latin'] })
 
 export default function Navbar({ activeSection, scrollToView, setActivePage }) {
@@ -20,7 +21,7 @@ export default function Navbar({ activeSection, scrollToView, setActivePage }) {
                                 src="/icons/reclaim-logo.svg"
                                 alt="recalim-logo"
                             />
-                            <p className='text-[18px] font-bold'>ReClaim</p>
+                            <p className='text-[18px] font-bold'>Reclaim</p>
                         </div>
                         {<div className='flex flex-row gap-10'>
                             {
@@ -32,12 +33,12 @@ export default function Navbar({ activeSection, scrollToView, setActivePage }) {
                             }
                         </div>}
                     </div>
-                    <button className="w-fit relative inline-flex  overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#3CE8B5_0%,#0000_50%,#3CE8B5_100%)]" />
+                    <ShimmerBorder containerClass="w-fit p-[1px]">
                         <span className="font-satoshi_bold text-[18px] inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-6 py-1 text-sm font-medium text-white backdrop-blur-3xl backdrop-filter">
                             Try it free
                         </span>
-                    </button>
+                    </ShimmerBorder>
+                    
 
                 </div>
                 :
@@ -48,7 +49,7 @@ export default function Navbar({ activeSection, scrollToView, setActivePage }) {
                                 src="/icons/reclaim-logo.svg"
                                 alt="recalim-logo"
                             />
-                            <p className='text-[18px] font-bold'>ReClaim</p>
+                            <p className='text-[18px] font-bold'>Reclaim</p>
                         </div>
                         <button onClick={() => { setNavExpand(!navExpand) }}>
                             <img src="icons/menu-bar.svg" className='w-[40px] h-[40px]  max-sm:w-[30px] max-sm:h-[30px]' />
