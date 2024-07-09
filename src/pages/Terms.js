@@ -1,6 +1,8 @@
 import { TERMS } from '@/utils/Contants'
 import React from 'react'
 import { Mulish } from "next/font/google";
+import { motion } from 'framer-motion';
+import PageEnterAnimation from '@/components/animations/PageEnterAnimation';
 const mulish = Mulish({ subsets: ['latin'] })
 
 export default function Terms() {
@@ -8,8 +10,11 @@ export default function Terms() {
     React.useEffect(() => {
         document.body.scrollTop = document.documentElement.scrollTop = 0;
     }, [])
+
+
     return (
-        <div className={`w-full mt-20 px-20 max-md:px-10 max-sm:px-5 pb-20 ${mulish.className}`}>
+
+     <PageEnterAnimation className={`w-full mt-20 px-20 max-md:px-10 max-sm:px-5 pb-20 ${mulish.className}`}>
             <div class="relative w-full mt-10">
                 <div class="absolute inset-0 bg-gradient-to-b from-[#3CE8B5] to-[#FFFFFF] opacity-5"></div>
                 <div class="relative p-4">
@@ -213,6 +218,6 @@ export default function Terms() {
                 <br />
 
             </div>
-        </div>
+     </PageEnterAnimation>
     )
 }

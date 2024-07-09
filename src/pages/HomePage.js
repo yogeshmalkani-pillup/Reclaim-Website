@@ -1,3 +1,4 @@
+import PageEnterAnimation from "@/components/animations/PageEnterAnimation";
 import ShimmerBorder from "@/components/button/ShimmerBorder";
 import ConcernedPeople from "@/components/home/ConcernedPeople";
 import PhoneEvolution from "@/components/home/PhoneEvolution";
@@ -45,7 +46,7 @@ export default function HomePage() {
     }, [loadVideoCb]);
 
     return (
-        <div className='bg-[#040415] flex flex-col gap-10 justify-start items-center w-full py-10 mt-20'>
+        <PageEnterAnimation className="bg-[#040415] flex flex-col gap-10 justify-start items-center w-full py-10 mt-20">
             <div className='flex flex-row max-md:flex-col max-md:gap-20 w-full items-center justify-between px-[100px] max-sm:px-5'>
                 <div className='flex flex-col max-md:items-center gap-4 w-[65%] max-md:w-full'>
                     <h1 className='text-[4.5vw] max-md:text-[42px] max-md:leading-[40px] w-[80%]  max-md:w-full max-md:text-center font-satoshi_bold leading-[4.5vw] tracking-[-0.1vw]'><span className=' text-[#3CE8B5]'>{"Distraction"}</span> {" has become our "}<span className=' text-[#3CE8B5]'>{"LifeStyle"}</span></h1>
@@ -68,8 +69,6 @@ export default function HomePage() {
             <PhoneEvolution />
             <ConcernedPeople />
 
-
-        </div>
-
+        </PageEnterAnimation>
     )
 }
