@@ -87,22 +87,22 @@ const Features = [
     {
         title: "Block Out The Noise",
         desription: "Eliminate distractions and focus on what truly matters.",
-        image: "blocking-session.png"
+        image: "blocking-session"
     },
     {
         title: "Design Your Day ",
         desription: "Achieve more with a clear, intentional schedule.",
-        image: "sessions.png"
+        image: "sessions"
     },
     {
         title: "Protect Your Priorities",
         desription: "Keep your focus on what truly matters most.",
-        image: "app-lock-session.png"
+        image: "app-lock-session"
     },
     {
         title: "Breathe, Think and Reflect",
         desription: "Pause and center yourself before diving into the digital world.",
-        image: "breathe-in-out.png"
+        image: "breathe-in-out"
     }
 ]
 

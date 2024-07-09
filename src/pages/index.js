@@ -5,11 +5,11 @@ import ReclaimEffect from "@/components/reclaimEffect/ReclaimEffect";
 import Testimonials from "@/components/testimonials/Testimonials";
 import UsedByLeaders from "@/components/used-by-leaders/UsedByLeaders";
 import { FEATURES, HOME, TERMSANDCONDITION } from "@/utils/Contants";
-import { FetauresSlider } from "@/components/app-features/FetauresSlider";
 import Terms from "./Terms";
 import Footer from "@/components/footer/Footer";
 import BottomSection from "@/components/footer/BottomSection";
 import { IsSectionVisible } from "@/utils/Utils";
+import ReclaimFeatrures from "@/components/app-features/RecalimFeatures";
 
 
 export default function Home() {
@@ -47,7 +47,7 @@ export default function Home() {
         <main
             className={`flex min-h-screen flex-col items-center justify-between bg-[#040415] `}
         >
-            <Navbar setActivePage={setActiveSection} scrollToView={scrollToElement} activeSection={activeSection} />
+            {activeSection != FEATURES && < Navbar setActivePage={setActiveSection} scrollToView={scrollToElement} activeSection={activeSection} />}
             <div className="w-full mt-20">
                 {
                     activeSection == TERMSANDCONDITION ? <Terms /> : <div className="w-full h-full">
@@ -55,7 +55,7 @@ export default function Home() {
                             <HomePage />
                         </div>
                         <div ref={featuresRef}>
-                            <FetauresSlider setActiveSection={setActiveSection} />
+                            <ReclaimFeatrures />
                         </div>
                         <ReclaimEffect />
                         <Testimonials />
@@ -66,7 +66,7 @@ export default function Home() {
                 }
                 <Footer setActivePage={setActiveSection} />
             </div>
-           
+
         </main>
     );
 }

@@ -41,7 +41,7 @@ export default function HomePage() {
             <div className="w-full flex flex-col items-center gap-20">
                 <div className='w-[70%] max-md:w-[90%] max-md:rounded-[50px] rounded-[70px] overflow-hidden '>
                     <video playsInline key={activeVideo} autoPlay muted id="homeVideo"  >
-                        <source src={`/videos/screenTimeVideo1.mp4`} type="video/mp4" />
+                        <source src={`/videos/screenTimeVideo${activeVideo}.mp4`} type="video/mp4" />
                     </video>
                 </div>
                 <h1 className='text-[4.5vw] max-lg:px-10 max-lg:leading-[42px] max-md:text-[40px] px-20 max-sm:px-5 w-[80%] max-md:w-full leading-[4.5vw] text-center font-satoshi_bold tracking-[-2px] pb-20'>
