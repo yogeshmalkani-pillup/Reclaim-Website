@@ -36,7 +36,7 @@ export default function TestimonialCarousel() {
         <div className='w-[80%] max-md:w-full max-md:px-5 flex flex-col overflow-hidden h-full'>
             {Reviews.map((item, idx) => {
                 if (activeItem == (idx + 1)){
-                    return <TestimonialItem leftOrRight={leftOrRight}  name={item.name} review={item.review} profession={item.profession} image={item.image} />
+                    return <TestimonialItem key={idx} leftOrRight={leftOrRight}  name={item.name} review={item.review} profession={item.profession} image={item.image} />
                 }
             })}
             <div className='w-full flex flex-row justify-start gap-5 mt-20'>
