@@ -14,9 +14,9 @@ export default function TestimonialCarousel() {
             if (activeItem + 1 > Reviews.length) {
                 setActiveItem(1)
             } else {
-                setActiveItem((activeItem + 1))
+                setActiveItem(activeItem + 1)
             }
-        } else if ("prev") {
+        } else if (operation == "prev") {
             setLeftOrRight("left")
             if (activeItem > 1) {
                 setActiveItem((activeItem - 1))
@@ -27,21 +27,21 @@ export default function TestimonialCarousel() {
     }
 
     useInterval(() => {
-        // handleCarousel("next");
-      }, 8000);
-  
+        handleCarousel("next");
+    }, 8000);
+
 
 
     return (
         <div className='w-[80%] max-md:w-full max-md:px-5 flex flex-col overflow-hidden h-full'>
             {Reviews.map((item, idx) => {
-                if (activeItem == (idx + 1)){
-                    return <TestimonialItem key={idx} leftOrRight={leftOrRight}  name={item.name} review={item.review} profession={item.profession} image={item.image} />
+                if (activeItem == (idx + 1)) {
+                    return <TestimonialItem key={idx} leftOrRight={leftOrRight} name={item.name} review={item.review} profession={item.profession} image={item.image} />
                 }
             })}
-            <div className='w-full flex flex-row justify-start gap-5 mt-20'>
+            <div className='w-full flex flex-row justify-start gap-5 mt-20 max-sm:mt-5'>
                 {Reviews.map((item, idx) => {
-                     return <CarouselDot key={idx} isActive={(idx + 1) == activeItem} />
+                    return <CarouselDot key={idx} isActive={(idx + 1) == activeItem} />
                 })}
             </div>
             <div className='flex flex-row gap-5 mt-6'>

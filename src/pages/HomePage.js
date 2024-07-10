@@ -1,5 +1,4 @@
 import PageEnterAnimation from "@/components/animations/PageEnterAnimation";
-import ShimmerBorder from "@/components/button/ShimmerBorder";
 import ConcernedPeople from "@/components/home/ConcernedPeople";
 import PhoneEvolution from "@/components/home/PhoneEvolution";
 import React from "react";
@@ -23,24 +22,24 @@ export default function HomePage() {
     }, [activeVideo])
 
 
-    const getVideoText = () =>{
+    const getVideoText = () => {
         switch (activeVideo) {
             case 1:
-                return  <h1 className='text-[3.2vw] max-lg:px-10 max-lg:leading-[42px] max-md:text-[40px] px-20 max-sm:px-5 w-[80%] max-md:w-full leading-[4vw] text-center font-satoshi_bold tracking-[-2px] pb-20'>
-                            {"Feeling like Big-Tech stole your"} <span className='text-themeColor'>precious time</span> ?
-                         </h1>   
+                return <h1 className='text-[3.2vw] max-lg:px-10 max-lg:leading-[42px] max-md:text-[40px] px-20 max-sm:px-5 w-[80%] max-md:w-full leading-[4vw] text-center font-satoshi_bold tracking-[-2px] pb-20'>
+                    {"Feeling like Big-Tech stole your"} <span className='text-themeColor'>precious time</span> ?
+                </h1>
             case 2:
-                return  <h1 className='text-[3.2vw] max-lg:px-10 max-lg:leading-[42px] max-md:text-[40px] px-20 max-sm:px-5 w-[80%] max-md:w-full leading-[4vw] text-center font-satoshi_bold tracking-[-2px] pb-20'>
-                           <span className='text-themeColor'>Constant distractions </span>killing your productivity ?
-                        </h1>   
+                return <h1 className='text-[3.2vw] max-lg:px-10 max-lg:leading-[42px] max-md:text-[40px] px-20 max-sm:px-5 w-[80%] max-md:w-full leading-[4vw] text-center font-satoshi_bold tracking-[-2px] pb-20'>
+                    <span className='text-themeColor'>Constant distractions </span>killing your productivity ?
+                </h1>
             case 3:
-                return  <h1 className='text-[3.2vw] max-lg:px-10 max-lg:leading-[42px] max-md:text-[40px] px-20 max-sm:px-5 w-[80%] max-md:w-full leading-[4vw] text-center font-satoshi_bold tracking-[-2px] pb-20'>
-                           <span className='text-themeColor'>Screen overload </span>ruining your efficiency ?
-                        </h1>      
+                return <h1 className='text-[3.2vw] max-lg:px-10 max-lg:leading-[42px] max-md:text-[40px] px-20 max-sm:px-5 w-[80%] max-md:w-full leading-[4vw] text-center font-satoshi_bold tracking-[-2px] pb-20'>
+                    <span className='text-themeColor'>Screen overload </span>ruining your efficiency ?
+                </h1>
             case 4:
-                return  <h1 className='text-[3.2vw] max-lg:px-10 max-lg:leading-[42px] max-md:text-[40px] px-20 max-sm:px-5 w-[80%] max-md:w-full leading-[4vw] text-center font-satoshi_bold tracking-[-2px] pb-20'>
-                           <span className='text-themeColor'>Screens disrupting </span>your peaceful sleep ?
-                        </h1>   
+                return <h1 className='text-[3.2vw] max-lg:px-10 max-lg:leading-[42px] max-md:text-[40px] px-20 max-sm:px-5 w-[80%] max-md:w-full leading-[4vw] text-center font-satoshi_bold tracking-[-2px] pb-20'>
+                    <span className='text-themeColor'>Screens disrupting </span>your peaceful sleep ?
+                </h1>
             default:
                 break;
         }
@@ -66,7 +65,7 @@ export default function HomePage() {
                     </video>
                 </div>
                 {getVideoText()}
-               
+
             </div>
             <PhoneEvolution />
             <ConcernedPeople />
