@@ -16,7 +16,7 @@ export default function ReclaimFeatrures() {
                                 <img src={`/images/features/${f.image}.png`} className='h-[60vh]' />
                             </div>
                             <div className='w-[50%] max-md:w-full px-5'>
-                                <h2 className='text-[3vw] max-sm:text-[30px]   font-satoshi_bold text-[#3CE8B5]'>{f.title}</h2>
+                                <h2 className='text-[3vw] max-sm:text-[30px]   font-satoshi_bold text-themeColor'>{f.title}</h2>
                                 <p className='text-[2vw] max-sm:text-[20px]   font-satoshi_medium'>
                                     {f.desription}
                                 </p>

@@ -1,13 +1,14 @@
 import React from 'react'
 import { Mulish } from "next/font/google";
-import { TERMSANDCONDITION } from '@/utils/Contants';
+import { HOME, TERMSANDCONDITION } from '@/utils/Contants';
+import Home from '@/pages';
 const mulish = Mulish({ subsets: ['latin'] })
 
 export default function Footer({ setActivePage }) {
     return (
         <div className='w-full'>
-              <div className={`w-full flex flex-row gap-10 flex-wrap justify-between p-20 max-md:p-10 max-sm:p-5 bg-[#111312] ${mulish.className}`}>
-            <div className='flex flex-col gap-10 max-sm:gap-5 max-md:w-full '>
+            <div className={`w-full flex flex-row gap-10 flex-wrap justify-between px-20 py-28 max-md:p-10 max-sm:p-5 bg-[#111312] ${mulish.className}`}>
+            <div className='flex flex-col gap-10 max-sm:gap-5 max-md:w-full ' onClick={()=> setActivePage(HOME)}>
                 <div className='flex flex-row items-center gap-2'>
                     <img className='w-[100px] h-[100px] max-sm:w-[50px] max-sm:h-[50px]'
                         src="/icons/reclaim-logo.svg"

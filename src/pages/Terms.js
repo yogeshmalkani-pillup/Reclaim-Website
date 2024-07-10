@@ -13,15 +13,14 @@ export default function Terms() {
 
 
     return (
-
      <PageEnterAnimation className={`w-full mt-20 px-20 max-md:px-10 max-sm:px-5 pb-20 ${mulish.className}`}>
-            <div class="relative w-full mt-10">
-                <div class="absolute inset-0 bg-gradient-to-b from-[#3CE8B5] to-[#FFFFFF] opacity-5"></div>
-                <div class="relative p-4">
-                    <h1 className='text-[4.5vw] font-bold text-[#3CE8B5] w-full text-center'>Terms of Use & Privacy Policy</h1>
+            <div class="relative w-full mt-10 border-[2px] max-sm:border-2 border-themeColor rounded-2xl border-opacity-20 ">
+                <div class="absolute rounded-2xl inset-0 bg-gradient-to-b from-themeColor to-[#FFFFFF] opacity-5"></div>
+                <div class="relative py-[50px] max-md:py-[25px]">
+                    <h1 className='text-[4.5vw] font-bold text-themeColor w-full text-center'>Terms of Use & Privacy Policy</h1>
                 </div>
             </div>
-            <div className='p-5 mt-10'>
+            <div className=' mt-10'>
                 <h1>Reclaim - Terms of Use</h1>
                 <br />
                 <p><strong>Effective Date: [5th June, 2024]</strong></p>
@@ -137,7 +136,7 @@ export default function Terms() {
                 </section>
             </div>
 
-            <div className='p-5'>
+            <div>
                 <h1>Reclaim - Privacy Policy</h1>
                 <br />
                 <p><strong>Effective Date: [5th June, 2024]</strong></p>

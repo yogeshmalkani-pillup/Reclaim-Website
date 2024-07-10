@@ -17,6 +17,9 @@ module.exports = {
                 'dimensions-bg-image': "url('../public/images/footer/dimensions.png')",
                 'iphone-bg-image': "url('../public/images/features/iphon15.png')",
             },
+            colors: {
+                'themeColor': '#3CE8B5'
+            },
             fontFamily: {
                 satoshi_regular: ["Satoshi_Regular", "sans-serif"],
                 satoshi_bold: ["Satoshi_Bold", "sans-serif"],

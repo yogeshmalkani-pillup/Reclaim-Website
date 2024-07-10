@@ -3,7 +3,6 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 function useWindowSize() {
-   
     const [windowSize, setWindowSize] = React.useState({
       width: undefined,
       height: undefined,
@@ -18,7 +17,7 @@ function useWindowSize() {
       }
       
       window.addEventListener("resize", handleResize);
-        handleResize();
+      handleResize();
       
       return () => window.removeEventListener("resize", handleResize);
     }, []); 
