@@ -22,7 +22,7 @@ export default function EffectCard({ heading, text, number, subText, key }) {
     }, 20);
 
     return (
-        <div key={key} ref={featureCardRef} className=' max-md:w-[80%] min-w-[30%] rounded-[50px] px-5 max-sm:px-2 h-[250px] max-sm:py-10 flex flex-col items-center justify-center bg-themeColor bg-opacity-5'>
+        <div key={key} ref={featureCardRef} className=' max-md:w-[80%] min-w-[30%] rounded-[50px] px-5 max-sm:px-2 h-[300px] max-sm:py-10 flex flex-col items-center justify-center bg-themeColor bg-opacity-5'>
             <p className='text-[3.5vw] max-md:text-[50px] text-themeColor font-satoshi_bold'>{value}</p>
             <p className='text-[1.5vw] max-md:text-[20px] font-satoshi_regular'>{text}</p>
             <p className='text-[1.2vw] max-md:text-[15px] text-center font-satoshi_regular text-white opacity-60 mt-2'>{subText}</p>

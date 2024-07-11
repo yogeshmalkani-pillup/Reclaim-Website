@@ -13,7 +13,7 @@ export default function ReclaimFeatrures() {
                                 className={`w-[40%] max-md:w-full bg-contain bg-left max-md:hidden h-full bg-fixed bg-no-repeat`}>
                             </div>
                             <div className='w-full justify-center items-center md:hidden  max-md:flex'>
-                                <img src={`/images/features/${f.image}.png`} className='h-[60vh]' />
+                                <img alt={`${f.title}`} src={`/images/features/${f.image}.png`} className='h-[60vh]' />
                             </div>
                             <div className='w-[50%] max-md:w-full px-5'>
                                 <h2 className='text-[3vw] max-sm:text-[30px]   font-satoshi_bold text-themeColor'>{f.title}</h2>

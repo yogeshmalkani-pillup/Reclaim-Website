@@ -8,6 +8,9 @@ import React from "react";
 export default function HomePage() {
 
     const [activeVideo, setActiveVideo] = React.useState(1)
+    const videoRef = React.useRef()
+    const [isVideoSectionInWindow,setIsVideoSectionInWindow] = React.useState()
+    
     const handleActiveVideo = () => {
         if (activeVideo < 4) {
             setActiveVideo(activeVideo + 1);
@@ -18,8 +21,38 @@ export default function HomePage() {
     }
 
     React.useEffect(() => {
-        document.getElementById('homeVideo').addEventListener('ended', handleActiveVideo, true);
+        const handleScroll = () => {
+          if (videoRef.current) {
+            const rect = videoRef.current.getBoundingClientRect();
+            const isVisible = (
+              rect.top >= 0 &&
+              rect.left >= 0 &&
+              rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+              rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+            setIsVideoSectionInWindow(isVisible);
+          }
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+
+    React.useEffect(() => {
+        let homeVideo = document.getElementById('homeVideo')
+        homeVideo.addEventListener('ended', handleActiveVideo, true);
+       
     }, [activeVideo])
+
+    React.useEffect(() => {
+        let homeVideo = document.getElementById('homeVideo')
+        if (isVideoSectionInWindow) {
+            homeVideo.play()
+        }
+    }, [isVideoSectionInWindow,activeVideo])
 
 
     const getVideoText = () => {
@@ -51,7 +84,11 @@ export default function HomePage() {
             <div className='flex flex-row max-md:flex-col max-md:gap-20 w-full items-center justify-between px-[100px] max-sm:px-5'>
                 <div className='flex flex-col justify-start max-md:items-center gap-4 w-[65%] max-md:w-full mb-[200px] max-md:mb-0'>
                     <h1 className='text-[4.5vw] max-md:text-[42px] max-md:leading-[40px] w-[80%]  max-md:w-full max-md:text-center font-satoshi_bold leading-[4.5vw] tracking-[-0.1vw]'><span className=' text-themeColor'>{"Distraction"}</span> {" has become our "}<span className=' text-themeColor'>{"LifeStyle"}</span></h1>
-                    <h2 className='text-[1.2vw] max-md:text-[18px] w-[80%] max-md:w-full max-md:text-center font-satoshi_regular'>{"Big-Tech spends billions hacking our minds. We are the ultimate solution to reclaim your attention"}</h2>
+                  <div>
+                  <h2 className='text-[1.2vw] max-md:text-[18px] w-[80%] max-md:w-full max-md:text-center font-satoshi_regular'>{"Big-Tech spends billions hacking our minds."}</h2>
+                  <h2 className='text-[1.2vw] max-md:text-[18px] w-[80%] max-md:w-full max-md:text-center font-satoshi_regular'>{"We are the ultimate solution to reclaim your attention."}</h2>
+                  </div>
+
                     <div className="w-fit rounded-full px-4 py-2 max-sm:py-2 bg-white text-[16px] max-sm:text-[20px] font-satoshi_medium  text-[#040415]" >
                         <p>Try for free</p>
                     </div>
@@ -60,7 +97,7 @@ export default function HomePage() {
             </div>
             <div className="w-full flex flex-col items-center gap-20 h-[100vh] max-md:h-[70vh]">
                 <div className='w-[70%] max-md:w-[90%] max-md:rounded-[50px] h-[70%] max-md:h-[50%] rounded-[70px] overflow-hidden '>
-                    <video playsInline key={activeVideo} autoPlay muted id="homeVideo" className="h-full w-full object-cover"  >
+                    <video ref={videoRef} playsInline key={activeVideo} muted id="homeVideo" className="h-full w-full object-cover"  >
                         <source src={`/videos/screenTimeVideo${activeVideo}.mp4`} type="video/mp4" />
                     </video>
                 </div>
