@@ -1,5 +1,4 @@
 import Navbar from "@/components/navbar/Navbar";
-import HomePage from "./HomePage";
 import React from "react";
 import ReclaimEffect from "@/components/reclaimEffect/ReclaimEffect";
 import Testimonials from "@/components/testimonials/Testimonials";
@@ -10,6 +9,7 @@ import Footer from "@/components/footer/Footer";
 import BottomSection from "@/components/footer/BottomSection";
 import { IsSectionVisible } from "@/utils/Utils";
 import ReclaimFeatrures from "@/components/app-features/RecalimFeatures";
+import HomePage from "./Home";
 
 
 export default function Home() {
