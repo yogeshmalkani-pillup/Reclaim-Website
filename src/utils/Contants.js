@@ -20,7 +20,7 @@ const Influencers = [
     { image: "simon.png", quote: "“We restrict smoking, gambling, and alcohol by age, but not social media and cell phones”", name: "Simon Sinek" },
     { image: "huberman.png", quote: "“We are building a generation of low attention.”", name: "Andrew Huberman" },
     { image: "tim.png", quote: "“There is always more information than attention.”", name: "Tim Ferris" },
-    { image: "elon.png", quote: "“Block apps automatically after you reach a set limit for a duration you can customize.”", name: "Elon Musk" }
+    { image: "elon.png", quote: "“We must solve great problems rather than being distracted by excessive social media usage.”", name: "Elon Musk" }
 ]
 
 const Leaders = [
