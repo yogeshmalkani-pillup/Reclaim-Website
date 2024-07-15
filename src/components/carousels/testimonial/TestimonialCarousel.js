@@ -11,28 +11,6 @@ export default function TestimonialCarousel() {
 
   const intervalRef = React.useRef();
 
-  // const handleCarousel = (operation) => {
-  //     if (operation == "next") {
-  //         setLeftOrRight("right")
-  //         if (activeItem + 1 > Reviews.length) {
-  //             setActiveItem(1)
-  //         } else {
-  //             setActiveItem(activeItem + 1)
-  //         }
-  //     } else if (operation == "prev") {
-  //         setLeftOrRight("left")
-  //         if (activeItem > 1) {
-  //             setActiveItem((activeItem - 1))
-  //         } else {
-  //             setActiveItem(Reviews.length)
-  //         }
-  //     }
-  // }
-
-  // useInterval(() => {
-  //     handleCarousel("next");
-  // }, 8000);
-
   useEffect(() => {
     startInterval();
     return () => clearInterval(intervalRef.current);
@@ -50,7 +28,7 @@ export default function TestimonialCarousel() {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       nextTestimonial();
-    }, 3000);
+    }, 10000);
   };
 
   const nextTestimonial = () => {
@@ -68,7 +46,7 @@ export default function TestimonialCarousel() {
     setTimeout(() => {
       setActiveItem((activeItem - 1 + Reviews.length) % Reviews.length);
       setIsPaused(false);
-    }, 1000);
+    }, 300);
   };
 
   //   const goToTestimonial = (index) => {
